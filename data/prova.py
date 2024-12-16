@@ -26,16 +26,14 @@ lang = pd.DataFrame(language)
 df_data["language"] = lang
 
 df_data.columns = ['words/parole', 'language/lingua']
-
 df_data = df_data.sample(frac = 1).reset_index(drop = True) 
-
 
 df_data.to_csv('data3.csv', index = False, header = False)
 
 X = df_data['words/parole']
 y = df_data['language/lingua']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 138729, test_size = 0.20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 138729, test_size = 0.20) #training and test set
 
 X_train.to_csv('X_train.csv', index = False, header = False)
 X_test.to_csv('X_test.csv', index = False, header = False)
